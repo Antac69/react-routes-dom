@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Contacto from "./componentes/Contacto";
 import Nosotros from "./componentes/Nosotros";
 import Inicio from "./componentes/Inicio";
+import User from "./componentes/User";
 
 function App() {
   return (
@@ -17,13 +18,16 @@ function App() {
         </div>
         <hr></hr>
         <Switch>
+          <Route path='/nosotros/:id'>
+          <User/>
+          </Route>
           <Route path='/contacto'>
             <Contacto></Contacto>
           </Route>
           <Route path='/nosotros'>
             <Nosotros/>
           </Route>
-          <Route path='/'>
+          <Route path='/' exact>
             <Inicio/>
           </Route>
         </Switch>
